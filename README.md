@@ -1,6 +1,6 @@
 # Hill
 
-Hill is an Angular front-end with Jersey remote facade
+Hill is an Angular front-end with a Jersey remote facade
 
 ## Angular
 
