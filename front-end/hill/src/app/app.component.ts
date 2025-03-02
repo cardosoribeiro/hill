@@ -7,7 +7,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prime';
+  title = 'Hill';
   userName = 'José';
   currentPage = 'prime';
   visibleSidebar: boolean = false;
