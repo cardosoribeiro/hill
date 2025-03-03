@@ -9,9 +9,9 @@
 
 ## Control flow
 
-1. Client start the connection with the login and password hardcoded in it. Client sends the user credentials in payload.
+1. Client starts the connection with the login and password hardcoded in it. Client sends the user credentials in payload.
 2. Server filter the fixed login. Validate the user in the resource. And generate a JWt in the resource response.
-3. Client stores a cookie with JWT and sends the JWT in all requests.
+3. Client stores a cookie with the JWT and sends the JWT in all requests.
 
 ## Code Snippets to help the implementation.
 
