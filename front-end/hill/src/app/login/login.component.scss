@@ -1,8 +1,20 @@
-.login-container {
+.login-container {    
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 60vh;  
+    /* It is horrible, find a way of make it beautier*/
+    ::ng-deep {
+      .p-card {
+        font-family: 'Rajdhani', sans-serif;
+      }
+      .p-inputtext {
+        font-family: 'Rajdhani', sans-serif;
+      }
+      label {
+        font-family: 'Rajdhani', sans-serif;
+      }
+    }      
   }
   
   p-card {
