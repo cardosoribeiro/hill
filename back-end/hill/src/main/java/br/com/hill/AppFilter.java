@@ -25,6 +25,12 @@ public class AppFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        if (requestContext.getMethod().equals("OPTIONS")) {
+            // Allow OPTIONS requests without authentication
+            // It must be studied if it is a security issue.
+            return;
+        }
+
         String path = requestContext.getUriInfo().getPath();
         if(path.equals("login")){
             if(!this.doBasicAuthentication(requestContext)) {

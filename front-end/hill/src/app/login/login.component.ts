@@ -17,17 +17,11 @@ export class LoginComponent implements OnInit {
     private router: Router) {}
 
   onSubmit() {
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
-
-
-
     // TODO: Fetch the API /login service
     // With authorization Basic hello:world
     // Payload {"username": this.username, "password": this.password}
     // Read the response token and save in the cookie
-/*    
-    console.log(btoa('hello:world'));
+///*       
     const headers = new Headers();
     headers.set('Authorization', 'Basic ' + btoa('hello:world'));
     headers.set('Content-Type', 'application/json');
@@ -37,8 +31,6 @@ export class LoginComponent implements OnInit {
       password: this.password
     };
 
-    console.log(JSON.stringify(body));
-
     fetch('http://localhost:8080/hill/webapi/login', {
       method: 'POST',
       headers: headers,
@@ -47,11 +39,11 @@ export class LoginComponent implements OnInit {
     .then(response => {
       if (!response.ok) {
         throw new Error('Login failed');
-      }
-      console.log(response);
+      }      
       return response.json();
     })
     .then(data => {
+      console.log(data.token);
       this.authService.saveUser(data.token, 7);
       this.router.navigate(['/']);
     })
@@ -59,9 +51,9 @@ export class LoginComponent implements OnInit {
       console.error('Login error:', error);
       // Display error message to user
     });
-*/
+//*/
 
-
+/*
     // Add your authentication logic here
     if (this.username === 'admin' && this.password === 'admin') {
       // Successful login
@@ -71,7 +63,7 @@ export class LoginComponent implements OnInit {
       // Handle login error
       console.log('Login failed');
     }    
-    
+*/    
   }
   
   ngOnInit(): void {

@@ -11,13 +11,14 @@ public class CorsFilter implements ContainerResponseFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-        //responseContext.getHeaders().add("Access-Control-Allow-Origin", "*"); // Or your specific origin
-        //responseContext.getHeaders().add("Access-Control-Allow-Headers", "*");
-        //responseContext.getHeaders().add("Access-Control-Allow-Methods", "*");
-        responseContext.getHeaders().add("Access-Control-Allow-Origin", "http://localhost:4200");
-        responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
-        responseContext.getHeaders().add("Access-Control-Max-Age", "1209600");
-        responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+        //System.out.println("CORS Filter Executed");
+        //System.out.println("Request Method: " + requestContext.getMethod());
+
+        responseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
         responseContext.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
+        responseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
+        responseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+
+        //System.out.println("Response Headers: " + responseContext.getHeaders());
     }
 }
