@@ -144,7 +144,7 @@ public class LoginFilter implements ContainerRequestFilter {
             return;
         }
 
-        String authenticationToken = authorizationHeader.substring(AUTHENTICATION_SCHEME_BASIC.length()).trim();
+        String authenticationToken = authorizationHeader.substring(AUTHENTICATION_SCHEME_BASIC.length().trim());
         try {
             String decodedString = new String(Base64.getDecoder().decode(authenticationToken), StandardCharsets.UTF_8);
             String[] credentials = decodedString.split(":");
@@ -226,3 +226,33 @@ class TokenResponse{
 ```
 
 
+
+```java
+/*
+                SecurityContext securityContext = new SecurityContext() {
+                    @Override
+                    public Principal getUserPrincipal() {
+                        return () -> sub; // sub is the user identifier
+                    }
+
+                    @Override
+                    public boolean isUserInRole(String role) {
+                        // Implement role-based authorization if needed
+                        return true;
+                    }
+
+                    @Override
+                    public boolean isSecure() {
+                        return requestContext.getSecurityContext().isSecure();
+                    }
+
+                    @Override
+                    public String getAuthenticationScheme() {
+                        return AUTHENTICATION_SCHEME_BEARER;
+                    }
+                };
+
+                requestContext.setSecurityContext(securityContext);
+*/                
+
+```
