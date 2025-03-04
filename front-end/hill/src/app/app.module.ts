@@ -8,10 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from 'primeng/sidebar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card'; // Import CardModule
 import { FormsModule } from '@angular/forms';
+
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
@@ -19,7 +24,9 @@ import { SettingsComponent } from './settings/settings.component';
     AppComponent,
     HomeComponent,
     UsersComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,9 @@ import { SettingsComponent } from './settings/settings.component';
     PanelMenuModule,
     ButtonModule,
     FormsModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
