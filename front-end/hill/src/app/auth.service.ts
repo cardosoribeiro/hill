@@ -33,7 +33,7 @@ export class AuthService {
     return this.getCookie('your_auth_cookie') !== null; // Check for cookie
   }
 
-  authenticateUser(token: string, expires: number): void {
+  saveUser(token: string, expires: number): void {
     this.setCookie('your_auth_cookie', token, expires);  
   }
 
