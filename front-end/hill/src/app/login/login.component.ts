@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     })
     .then(data => {
       console.log(data.token);
+      // TODO: Finish the AuthService
       this.authService.saveUser(data.token, 7);
       this.router.navigate(['/']);
     })
