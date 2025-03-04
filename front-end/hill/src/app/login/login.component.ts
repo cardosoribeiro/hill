@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     // Add your authentication logic here
     if (this.username === 'admin' && this.password === 'admin') {
       // Successful login
-      this.authService.setCookie('your_auth_cookie', 'your_auth_token', 7); // Set cookie
-      this.router.navigate(['/home']); // Navigate to home
+      this.authService.authenticateUser('jwt.token.sign', 7); // Set cookie
+      this.router.navigate(['/']); // Navigate to home
     } else {
       // Handle login error
       console.log('Login failed');
